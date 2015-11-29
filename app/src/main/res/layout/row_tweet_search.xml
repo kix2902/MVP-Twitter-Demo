@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.redinput.mvptwitterdemo.view.binding.TweetRowModel"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/container_tweet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:onClick="@{viewModel.onClickTweet}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/row_tweet_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@{viewModel.tweetAuthor}"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/row_tweet_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{viewModel.tweetText}"
+                    android:textSize="22sp"
+                    android:onClick="@{viewModel.onClickTweet}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/row_tweet_retweets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_retweet"
+                        android:drawableStart="@drawable/ic_retweet"
+                        android:textColor="@color/colorAccent"
+                        android:drawablePadding="7dp"
+                        android:text="@{viewModel.tweetRetweets}"
+                        android:textSize="16sp"/>
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/row_tweet_favorites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_like"
+                        android:drawableStart="@drawable/ic_like"
+                        android:textColor="@color/colorAccent"
+                        android:drawablePadding="7dp"
+                        android:text="@{viewModel.tweetFavorites}"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVP Twitter Demo</string>
+    <string name="action_search">Search</string>
+    <string name="activity_main_search_hint">To start searching tap the icon\n
+        of the upper right corner</string>
+    <string name="onclick_row_toast_text">"Clicked tweet id %s"</string>
+</resources>
